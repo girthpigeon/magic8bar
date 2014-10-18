@@ -21,6 +21,8 @@
 		849ACF8C19E2163A00455E7D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849ACF7B19E2143500455E7D /* CoreLocation.framework */; };
 		849ACF8D19E2163A00455E7D /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849ACF7919E2141D00455E7D /* GoogleMaps.framework */; };
 		849ACF8E19E2163A00455E7D /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849ACF8619E2152A00455E7D /* Accelerate.framework */; };
+		84BBDFFC19E43BDB009B1DF6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BBDFFB19E43BDB009B1DF6 /* SystemConfiguration.framework */; };
+		84BBDFFE19E43BFB009B1DF6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BBDFFD19E43BFB009B1DF6 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		849ACF8119E214D000455E7D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		849ACF8319E214DD00455E7D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		849ACF8619E2152A00455E7D /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		84BBDFFB19E43BDB009B1DF6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		84BBDFFD19E43BFB009B1DF6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,12 +65,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84BBDFFC19E43BDB009B1DF6 /* SystemConfiguration.framework in Frameworks */,
 				849ACF8819E2163A00455E7D /* CoreGraphics.framework in Frameworks */,
+				84BBDFFE19E43BFB009B1DF6 /* CoreData.framework in Frameworks */,
+				849ACF8D19E2163A00455E7D /* GoogleMaps.framework in Frameworks */,
+				849ACF8C19E2163A00455E7D /* CoreLocation.framework in Frameworks */,
 				849ACF8919E2163A00455E7D /* Foundation.framework in Frameworks */,
 				849ACF8A19E2163A00455E7D /* UIKit.framework in Frameworks */,
 				849ACF8B19E2163A00455E7D /* MapKit.framework in Frameworks */,
-				849ACF8C19E2163A00455E7D /* CoreLocation.framework in Frameworks */,
-				849ACF8D19E2163A00455E7D /* GoogleMaps.framework in Frameworks */,
 				849ACF8E19E2163A00455E7D /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,6 +150,8 @@
 		849ACF8519E214F500455E7D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84BBDFFD19E43BFB009B1DF6 /* CoreData.framework */,
+				84BBDFFB19E43BDB009B1DF6 /* SystemConfiguration.framework */,
 				849ACF8319E214DD00455E7D /* CoreGraphics.framework */,
 				849ACF8119E214D000455E7D /* Foundation.framework */,
 				849ACF7F19E214C100455E7D /* UIKit.framework */,
