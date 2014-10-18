@@ -20,7 +20,7 @@
 @property CLLocation *currentLocation;
 @property CLPlacemark *placemark;
 @property CLGeocoder *geocoder;
-@property int currenDist;
+@property float currentDist;
 @property bool locationFound;
 
 @property (nonatomic, strong) NSString *date;
@@ -32,6 +32,12 @@
 @property (nonatomic, strong) NSString *longitude;
 @property (nonatomic, strong) NSString *latitude;
 
+@property (strong, nonatomic) IBOutlet UILabel *firstLine;
+@property (strong, nonatomic) IBOutlet UILabel *secondLine;
+@property (strong, nonatomic) IBOutlet UILabel *thirdLine;
+
+
+@property (strong, nonatomic) IBOutlet UIButton *getDirections;
 @property (strong, nonatomic) IBOutlet UILabel *allKnowingLabel;
 @end
 
