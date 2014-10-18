@@ -32,5 +32,6 @@
 @property (nonatomic, strong) NSString *longitude;
 @property (nonatomic, strong) NSString *latitude;
 
+@property (strong, nonatomic) IBOutlet UILabel *allKnowingLabel;
 @end
 

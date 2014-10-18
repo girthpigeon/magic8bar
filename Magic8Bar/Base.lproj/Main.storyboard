@@ -16,25 +16,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shake me" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Lk-xF-Q4M">
-                                <rect key="frame" x="173" y="254" width="254" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="73" y="314" width="254" height="21"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="272" y="280" width="254" height="21"/>
-                                </variation>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MmT-uh-01b">
-                                <rect key="frame" x="77" y="208" width="449" height="30"/>
-                                <state key="normal" title="Where should I drink tonight?">
+                                <rect key="frame" x="261" y="332" width="79" height="26"/>
+                                <state key="normal" title="Shake">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="-24" y="232" width="449" height="30"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="-24" y="460" width="449" height="32"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="176" y="234" width="449" height="30"/>
@@ -43,12 +32,47 @@
                                     <action selector="findBars:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="mcH-4O-WSY"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Where should I drink tonight?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="10" preferredMaxLayoutWidth="112" translatesAutoresizingMaskIntoConstraints="NO" id="uus-Jz-QJB">
+                                <rect key="frame" x="244" y="220" width="112" height="104"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="144" y="348" width="112" height="104"/>
+                                </variation>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="MmT-uh-01b" secondAttribute="centerY" constant="-76" id="Di0-o8-D7I"/>
+                            <constraint firstAttribute="centerX" secondItem="uus-Jz-QJB" secondAttribute="centerX" id="RlB-kG-IDL"/>
+                            <constraint firstAttribute="centerY" secondItem="uus-Jz-QJB" secondAttribute="centerY" id="mR7-sG-18d"/>
+                            <constraint firstAttribute="centerX" secondItem="MmT-uh-01b" secondAttribute="centerX" id="rTj-M2-XqB"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="RlB-kG-IDL"/>
+                                <exclude reference="mR7-sG-18d"/>
+                                <exclude reference="Di0-o8-D7I"/>
+                                <exclude reference="rTj-M2-XqB"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="RlB-kG-IDL"/>
+                                <include reference="mR7-sG-18d"/>
+                                <include reference="Di0-o8-D7I"/>
+                                <include reference="rTj-M2-XqB"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="allKnowingLabel" destination="uus-Jz-QJB" id="cmB-lE-8aX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="210" y="102"/>
         </scene>
     </scenes>
 </document>

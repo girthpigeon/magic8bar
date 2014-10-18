@@ -22,6 +22,14 @@
     //[self getCurrentLocation];
 }
 
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    if (motion == UIEventSubtypeMotionShake)
+    {
+        [self getCurrentLocation];
+    }
+}
+
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
     CLLocation *location = [locations lastObject];
@@ -162,7 +170,22 @@
     //The results from Google will be an array obtained from the NSDictionary object with the key "results".
     NSDictionary* christianValues = [heHasBeenSaved objectForKey:@"result"];
     NSString *saintName = [christianValues objectForKey:@"name"];
-    NSLog(@"%@", saintName);
+    self.allKnowingLabel.text = saintName;
+}
+
+
+-(BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self becomeFirstResponder];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [self resignFirstResponder];
+    [super viewWillDisappear:animated];
 }
 
 - (void)didReceiveMemoryWarning {
