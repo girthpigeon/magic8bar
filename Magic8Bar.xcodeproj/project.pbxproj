@@ -15,6 +15,7 @@
 		8484B91C19DF7CDA00F3F92B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8484B91A19DF7CDA00F3F92B /* LaunchScreen.xib */; };
 		8484B92819DF7CDA00F3F92B /* Magic8BarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8484B92719DF7CDA00F3F92B /* Magic8BarTests.m */; };
 		8491D84D19F344220072F29E /* magic8bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 8491D84C19F344220072F29E /* magic8bar.png */; };
+		8491D85119F360D50072F29E /* drinklist.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 8491D85019F360D50072F29E /* drinklist.rtf */; };
 		849ACF8819E2163A00455E7D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849ACF8319E214DD00455E7D /* CoreGraphics.framework */; };
 		849ACF8919E2163A00455E7D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849ACF8119E214D000455E7D /* Foundation.framework */; };
 		849ACF8A19E2163A00455E7D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849ACF7F19E214C100455E7D /* UIKit.framework */; };
@@ -51,6 +52,7 @@
 		8484B92619DF7CDA00F3F92B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8484B92719DF7CDA00F3F92B /* Magic8BarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Magic8BarTests.m; sourceTree = "<group>"; };
 		8491D84C19F344220072F29E /* magic8bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = magic8bar.png; sourceTree = "<group>"; };
+		8491D85019F360D50072F29E /* drinklist.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = drinklist.rtf; sourceTree = SOURCE_ROOT; };
 		849ACF7919E2141D00455E7D /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = "../../../Downloads/GoogleMaps-iOS-1.8.1/GoogleMaps.framework"; sourceTree = "<group>"; };
 		849ACF7B19E2143500455E7D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		849ACF7D19E2146F00455E7D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -153,6 +155,7 @@
 		8491D84919F335300072F29E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8491D85019F360D50072F29E /* drinklist.rtf */,
 				8491D84C19F344220072F29E /* magic8bar.png */,
 			);
 			name = Resources;
@@ -259,6 +262,7 @@
 				8484B91C19DF7CDA00F3F92B /* LaunchScreen.xib in Resources */,
 				8491D84D19F344220072F29E /* magic8bar.png in Resources */,
 				8484B91919DF7CDA00F3F92B /* Images.xcassets in Resources */,
+				8491D85119F360D50072F29E /* drinklist.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

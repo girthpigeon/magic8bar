@@ -38,6 +38,9 @@
 @property (strong, nonatomic) NSString *currentBar;
 @property bool lookingForBars;
 
+@property (strong, nonatomic) NSMutableArray *drinks;
+@property (strong, nonatomic) NSMutableArray *bars;
+
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 
 @property (strong, nonatomic) IBOutlet UIButton *getDirections;

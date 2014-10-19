@@ -23,7 +23,7 @@
     // Pass 1.0 to force exact pixel size.
     
     UIImage *Background = [UIImage imageNamed:@"magic8bar.png"];
-    
+    self.lookingForBars = true;
     
     //UIGraphicsBeginImageContext(newSize);
     // In next line, pass 0.0 to use the current device's pixel scaling factor (and thus account for Retina resolution).
@@ -80,7 +80,11 @@
 }
 - (IBAction)findBars:(id)sender {
     if(self.lookingForBars){
-        [self getCurrentLocation];
+        if(!self.currentLocation){
+            [self getCurrentLocation];
+        } else {
+            [self chooseASacrifice];
+        }
     } else {
         [self chooseADrink];
     }
@@ -89,6 +93,42 @@
 
 -(void)chooseADrink
 {
+    if (!self.drinks){
+        [self getDrinks];
+    } else {
+        [self chooseAWhistleWetter];
+    }
+}
+
+-(void)chooseAWhistleWetter
+{
+    self.firstLine.text = @"";
+    self.secondLine.text = @"";
+    self.thirdLine.text = @"";
+    int theChosenOne = arc4random_uniform([self.drinks count]);
+    NSString *winner = [self.drinks objectAtIndex:theChosenOne];
+    
+    [self parseResults:winner];
+    
+    //self.firstLine.text = [winner substringToIndex:winner.length-1];
+}
+
+-(void)getDrinks
+{
+    NSString *filepath = [[NSBundle mainBundle] pathForResource:@"drinklist" ofType:@"rtf"];
+    NSError *error;
+    NSString *fileContents = [NSString stringWithContentsOfFile:filepath encoding:NSUTF8StringEncoding error:&error];
+    
+    if (error)
+        NSLog(@"Error reading file: %@", error.localizedDescription);
+    
+    
+    NSArray *listArray = [fileContents componentsSeparatedByString:@"\n"];
+    NSLog(@"items = %@", listArray);
+    
+    self.drinks = [[NSMutableArray alloc] initWithArray:listArray];
+    
+    [self chooseAWhistleWetter];
     
 }
 
@@ -103,6 +143,7 @@
 }
 
 -(void) queryGooglePlaces: (NSString *) placeType {
+    
     //NSString *url = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/textsearch/xml?query=bars+in+Madison&key=AIzaSyDtjV1ri5kZKMqkV6MDx_mhZgVlaBgzuRM"];
     
     NSString *url = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/radarsearch/json?location=%f,%f&radius=%f&types=%@&sensor=true&key=%@", self.currentLocation.coordinate.latitude, self.currentLocation.coordinate.longitude, self.currentDist, placeType, kGOOGLE_API_KEY];
@@ -131,8 +172,14 @@
     //The results from Google will be an array obtained from the NSDictionary object with the key "results".
     NSArray* places = [json objectForKey:@"results"];
     
-    int theChosenOne = arc4random_uniform([places count]);
-    NSDictionary *winner = [places objectAtIndex:theChosenOne];
+    self.bars = [[NSMutableArray alloc] initWithArray:places];
+    [self chooseASacrifice];
+}
+
+-(void)chooseASacrifice
+{
+    int theChosenOne = arc4random_uniform([self.bars count]);
+    NSDictionary *winner = [self.bars objectAtIndex:theChosenOne];
     NSString *savage = [winner objectForKey:@"place_id"];
     
     [self bringHimToMe:savage];
@@ -167,6 +214,12 @@
     NSDictionary* christianValues = [heHasBeenSaved objectForKey:@"result"];
     NSString *saintName = [christianValues objectForKey:@"name"];
     
+    self.currentBar = saintName;
+    [self parseResults:saintName];
+}
+
+-(void)parseResults:(NSString*)saintName
+{
     NSInteger numChars = saintName.length;
     NSMutableArray *words = [[NSMutableArray alloc] init];
     NSMutableArray *wordLengths = [[NSMutableArray alloc] init];
@@ -213,9 +266,13 @@
         float percent = 10.0f * (len / numChars);
         cumalitve = cumalitve + percent;
         self.firstLine.alpha = 0;
+        
+        if( [word characterAtIndex:word.length-1] == '\\'){
+            word = [word substringToIndex:word.length-1];
+        }
+        
         if(cumalitve < 6.0f || [self.firstLine.text isEqualToString:@""]){
             self.firstLine.text = [NSString stringWithFormat:@"%@ %@", self.firstLine.text, word];
-            
         }
         else if (cumalitve < 8.0f || [self.secondLine.text isEqualToString:@""]){
             self.secondLine.text = [NSString stringWithFormat:@"%@ %@", self.secondLine.text, word];
@@ -262,7 +319,6 @@
     
     NSLog(@"%@", words);
     
-    self.currentBar = [NSString stringWithFormat:@"%@ %@ %@", self.firstLine.text, self.secondLine.text, self.thirdLine.text];
     //self.allKnowingLabel.text = saintName;
 }
 
