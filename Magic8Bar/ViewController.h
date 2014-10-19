@@ -36,6 +36,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *secondLine;
 @property (strong, nonatomic) IBOutlet UILabel *thirdLine;
 @property (strong, nonatomic) NSString *currentBar;
+@property bool lookingForBars;
 
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 

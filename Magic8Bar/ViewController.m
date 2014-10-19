@@ -44,7 +44,7 @@
 {
     if (motion == UIEventSubtypeMotionShake)
     {
-        [self getCurrentLocation];
+        [self findBars:self];
     }
 }
 
@@ -79,9 +79,17 @@
     
 }
 - (IBAction)findBars:(id)sender {
-    //[self queryGooglePlaces:@"bar"];
-    [self getCurrentLocation];
+    if(self.lookingForBars){
+        [self getCurrentLocation];
+    } else {
+        [self chooseADrink];
+    }
 
+}
+
+-(void)chooseADrink
+{
+    
 }
 
 #pragma mark CLLocationManagerDelegate
@@ -93,37 +101,7 @@
                                initWithTitle:@"Error" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [errorAlert show];
 }
-/*
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
-{
-    CLLocation *newLocation = (CLLocation*)[locations objectAtIndex:[locations count] - 1];
-    self.currentLocation = newLocation;
-    self.longitude = [NSString stringWithFormat:@"%.8f", self.currentLocation.coordinate.longitude];
-    self.latitude = [NSString stringWithFormat:@"%.8f", self.currentLocation.coordinate.latitude];
-    
-    NSLog(@"new coords: %@, %@", self.longitude, self.latitude);
-    // Stop Location Manager
-    [self.locationManager stopUpdatingLocation];
-    
-    //NSLog(@"Resolving the Address");
-    [self.geocoder reverseGeocodeLocation:self.currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
-        //NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
-        if (error == nil && [placemarks count] > 0) {
-            self.placemark = [placemarks lastObject];
-            self.country = self.placemark.country;
-            self.state = self.placemark.administrativeArea;
-            self.zip = self.placemark.postalCode;
-            self.city = self.placemark.locality;
-            self.address = [NSString stringWithFormat:@"%@, %@", self.placemark.subThoroughfare, self.placemark.thoroughfare];
-            
-            [self queryGooglePlaces:@"bars"];
 
-        } else {
-            NSLog(@"%@", error.debugDescription);
-        }
-    } ];
-}
-*/
 -(void) queryGooglePlaces: (NSString *) placeType {
     //NSString *url = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/textsearch/xml?query=bars+in+Madison&key=AIzaSyDtjV1ri5kZKMqkV6MDx_mhZgVlaBgzuRM"];
     
@@ -306,7 +284,17 @@
     }
 }
 - (IBAction)switched:(id)sender {
-    
+    if(self.segmentedControl.selectedSegmentIndex == 1){
+        self.firstLine.text = @"What should";
+        self.secondLine.text = @"I drink";
+        self.thirdLine.text = @"tonight?";
+        self.lookingForBars = false;
+    } else {
+        self.firstLine.text = @"Where should";
+        self.secondLine.text = @"I go";
+        self.thirdLine.text = @"tonight?";
+        self.lookingForBars = true;
+    }
 }
 
 -(BOOL)canBecomeFirstResponder {
