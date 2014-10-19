@@ -18,6 +18,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //UIGraphicsBeginImageContext(newSize);
+    // In next line, pass 0.0 to use the current device's pixel scaling factor (and thus account for Retina resolution).
+    // Pass 1.0 to force exact pixel size.
+    
+    UIImage *Background = [UIImage imageNamed:@"magic8bar.png"];
+    
+    
+    //UIGraphicsBeginImageContext(newSize);
+    // In next line, pass 0.0 to use the current device's pixel scaling factor (and thus account for Retina resolution).
+    // Pass 1.0 to force exact pixel size.
+    CGRect screen = [[UIScreen mainScreen] bounds];
+    UIGraphicsBeginImageContextWithOptions(screen.size, NO, 0.0);
+    [Background drawInRect:CGRectMake(0, 0, screen.size.width, screen.size.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:newImage]];
+    
     self.currentDist = 9000.0;
     //[self getCurrentLocation];
 }

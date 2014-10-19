@@ -14,6 +14,7 @@
 		8484B91919DF7CDA00F3F92B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8484B91819DF7CDA00F3F92B /* Images.xcassets */; };
 		8484B91C19DF7CDA00F3F92B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8484B91A19DF7CDA00F3F92B /* LaunchScreen.xib */; };
 		8484B92819DF7CDA00F3F92B /* Magic8BarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8484B92719DF7CDA00F3F92B /* Magic8BarTests.m */; };
+		8491D84D19F344220072F29E /* magic8bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 8491D84C19F344220072F29E /* magic8bar.png */; };
 		849ACF8819E2163A00455E7D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849ACF8319E214DD00455E7D /* CoreGraphics.framework */; };
 		849ACF8919E2163A00455E7D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849ACF8119E214D000455E7D /* Foundation.framework */; };
 		849ACF8A19E2163A00455E7D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849ACF7F19E214C100455E7D /* UIKit.framework */; };
@@ -49,6 +50,7 @@
 		8484B92119DF7CDA00F3F92B /* Magic8BarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Magic8BarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8484B92619DF7CDA00F3F92B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8484B92719DF7CDA00F3F92B /* Magic8BarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Magic8BarTests.m; sourceTree = "<group>"; };
+		8491D84C19F344220072F29E /* magic8bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = magic8bar.png; sourceTree = "<group>"; };
 		849ACF7919E2141D00455E7D /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = "../../../Downloads/GoogleMaps-iOS-1.8.1/GoogleMaps.framework"; sourceTree = "<group>"; };
 		849ACF7B19E2143500455E7D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		849ACF7D19E2146F00455E7D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -90,6 +92,7 @@
 		8484B8FF19DF7CDA00F3F92B = {
 			isa = PBXGroup;
 			children = (
+				8491D84919F335300072F29E /* Resources */,
 				849ACF8519E214F500455E7D /* Frameworks */,
 				8484B90A19DF7CDA00F3F92B /* Magic8Bar */,
 				8484B92419DF7CDA00F3F92B /* Magic8BarTests */,
@@ -145,6 +148,15 @@
 				8484B92619DF7CDA00F3F92B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8491D84919F335300072F29E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8491D84C19F344220072F29E /* magic8bar.png */,
+			);
+			name = Resources;
+			path = Magic8Bar;
 			sourceTree = "<group>";
 		};
 		849ACF8519E214F500455E7D /* Frameworks */ = {
@@ -245,6 +257,7 @@
 			files = (
 				8484B91719DF7CDA00F3F92B /* Main.storyboard in Resources */,
 				8484B91C19DF7CDA00F3F92B /* LaunchScreen.xib in Resources */,
+				8491D84D19F344220072F29E /* magic8bar.png in Resources */,
 				8484B91919DF7CDA00F3F92B /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

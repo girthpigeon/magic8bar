@@ -12,12 +12,39 @@
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                    <view key="view" tag="1" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="I Drink" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m1Y-Ji-fSw">
+                                <rect key="frame" x="174" y="232" width="252" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="167" y="338" width="67" height="29"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Where Should" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jo1-pW-iPx">
+                                <rect key="frame" x="124" y="184" width="341" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="126" y="290" width="148" height="29"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tonight?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TFG-vB-kAP">
+                                <rect key="frame" x="209" y="280" width="170" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="155" y="405" width="90" height="29"/>
+                                </variation>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MmT-uh-01b">
-                                <rect key="frame" x="261" y="403" width="79" height="26"/>
+                                <rect key="frame" x="255" y="346" width="79" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Shake">
                                     <color key="titleColor" red="0.20000000000000001" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -35,7 +62,7 @@
                                 <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="161" y="266" width="79" height="26"/>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="-24" y="460" width="449" height="32"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
@@ -45,91 +72,18 @@
                                     <action selector="findBars:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="mcH-4O-WSY"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="I Drink" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m1Y-Ji-fSw">
-                                <rect key="frame" x="150" y="280" width="300" height="40"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tonight" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TFG-vB-kAP">
-                                <rect key="frame" x="200" y="328" width="200" height="40"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Where Should" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jo1-pW-iPx">
-                                <rect key="frame" x="88" y="232" width="425" height="40"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="MmT-uh-01b" secondAttribute="centerX" id="6iA-ay-LrB"/>
-                            <constraint firstAttribute="centerY" secondItem="TFG-vB-kAP" secondAttribute="centerY" constant="-48" id="9Jm-dA-Oxj"/>
-                            <constraint firstAttribute="centerX" secondItem="TFG-vB-kAP" secondAttribute="centerX" id="Cc7-vk-dSF"/>
-                            <constraint firstAttribute="centerY" secondItem="MmT-uh-01b" secondAttribute="centerY" constant="-73" id="Ce6-TD-Zcg"/>
-                            <constraint firstAttribute="centerY" secondItem="MmT-uh-01b" secondAttribute="centerY" constant="-76" id="Di0-o8-D7I"/>
-                            <constraint firstAttribute="centerY" secondItem="jo1-pW-iPx" secondAttribute="centerY" constant="48" id="I76-4v-aag"/>
-                            <constraint firstAttribute="centerY" secondItem="MmT-uh-01b" secondAttribute="centerY" constant="-73" id="IJc-Kh-glu"/>
-                            <constraint firstAttribute="centerX" secondItem="MmT-uh-01b" secondAttribute="centerX" id="MsO-5D-JhY"/>
-                            <constraint firstAttribute="centerX" secondItem="m1Y-Ji-fSw" secondAttribute="centerX" id="NVh-hh-CSu"/>
-                            <constraint firstAttribute="centerY" secondItem="MmT-uh-01b" secondAttribute="centerY" constant="-116" id="Rwr-NI-gMA"/>
-                            <constraint firstAttribute="centerX" secondItem="jo1-pW-iPx" secondAttribute="centerX" id="VC8-CF-tFc"/>
-                            <constraint firstAttribute="centerY" secondItem="MmT-uh-01b" secondAttribute="centerY" constant="-73" id="YhL-uC-OH0"/>
-                            <constraint firstAttribute="centerX" secondItem="MmT-uh-01b" secondAttribute="centerX" id="cRJ-Ny-ONf"/>
-                            <constraint firstAttribute="centerY" secondItem="m1Y-Ji-fSw" secondAttribute="centerY" id="iVR-sp-uvt"/>
-                            <constraint firstAttribute="centerX" secondItem="MmT-uh-01b" secondAttribute="centerX" id="kWe-ib-0vI"/>
-                            <constraint firstAttribute="centerX" secondItem="MmT-uh-01b" secondAttribute="centerX" id="mel-8z-lin"/>
-                            <constraint firstAttribute="centerX" secondItem="m1Y-Ji-fSw" secondAttribute="centerX" id="nQr-5k-lfW"/>
-                            <constraint firstAttribute="centerY" secondItem="MmT-uh-01b" secondAttribute="centerY" constant="-79" id="qhp-PS-c9T"/>
-                            <constraint firstAttribute="centerX" secondItem="MmT-uh-01b" secondAttribute="centerX" id="rTj-M2-XqB"/>
+                            <constraint firstAttribute="centerY" secondItem="m1Y-Ji-fSw" secondAttribute="centerY" constant="48" id="0BO-gN-KF0"/>
+                            <constraint firstAttribute="centerX" secondItem="TFG-vB-kAP" secondAttribute="centerX" id="FNY-4G-04E"/>
+                            <constraint firstAttribute="centerX" secondItem="jo1-pW-iPx" secondAttribute="centerX" id="a70-3f-kjm"/>
+                            <constraint firstAttribute="centerY" secondItem="MmT-uh-01b" secondAttribute="centerY" constant="-59" id="f6x-Fm-RE5"/>
+                            <constraint firstAttribute="centerX" secondItem="MmT-uh-01b" secondAttribute="centerX" id="iGn-Yc-XJD"/>
+                            <constraint firstAttribute="centerY" secondItem="TFG-vB-kAP" secondAttribute="centerY" id="vZs-30-Iy0"/>
+                            <constraint firstAttribute="centerX" secondItem="m1Y-Ji-fSw" secondAttribute="centerX" id="xTR-pc-8cE"/>
+                            <constraint firstAttribute="centerY" secondItem="jo1-pW-iPx" secondAttribute="centerY" constant="96" id="zFn-2a-hKY"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="Ce6-TD-Zcg"/>
-                                <exclude reference="Di0-o8-D7I"/>
-                                <exclude reference="IJc-Kh-glu"/>
-                                <exclude reference="MsO-5D-JhY"/>
-                                <exclude reference="YhL-uC-OH0"/>
-                                <exclude reference="cRJ-Ny-ONf"/>
-                                <exclude reference="kWe-ib-0vI"/>
-                                <exclude reference="mel-8z-lin"/>
-                                <exclude reference="qhp-PS-c9T"/>
-                                <exclude reference="rTj-M2-XqB"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=compact">
-                            <mask key="constraints">
-                                <include reference="MsO-5D-JhY"/>
-                                <include reference="YhL-uC-OH0"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular">
-                            <mask key="constraints">
-                                <include reference="Ce6-TD-Zcg"/>
-                                <include reference="kWe-ib-0vI"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="constraints">
-                                <include reference="IJc-Kh-glu"/>
-                                <include reference="mel-8z-lin"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=compact-widthClass=compact">
-                            <mask key="constraints">
-                                <include reference="cRJ-Ny-ONf"/>
-                                <include reference="qhp-PS-c9T"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="constraints">
-                                <include reference="Di0-o8-D7I"/>
-                                <include reference="rTj-M2-XqB"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="firstLine" destination="jo1-pW-iPx" id="E48-jS-rW9"/>
