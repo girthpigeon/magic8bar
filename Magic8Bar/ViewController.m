@@ -225,15 +225,19 @@
     self.firstLine.text = @"";
     self.secondLine.text = @"";
     self.thirdLine.text = @"";
+    self.firstLine.transform = CGAffineTransformMakeTranslation(0, -10);
+    self.secondLine.transform = CGAffineTransformMakeTranslation(0, -10);
+    self.thirdLine.transform = CGAffineTransformMakeTranslation(0, -10);
     
     for(int i=0; i < [words count]; i++){
         NSString *word = [words objectAtIndex:i];
         float len = [[wordLengths objectAtIndex:i] floatValue];
         float percent = 10.0f * (len / numChars);
         cumalitve = cumalitve + percent;
-        
+        self.firstLine.alpha = 0;
         if(cumalitve < 6.0f || [self.firstLine.text isEqualToString:@""]){
             self.firstLine.text = [NSString stringWithFormat:@"%@ %@", self.firstLine.text, word];
+            
         }
         else if (cumalitve < 8.0f || [self.secondLine.text isEqualToString:@""]){
             self.secondLine.text = [NSString stringWithFormat:@"%@ %@", self.secondLine.text, word];
@@ -242,21 +246,67 @@
         }
     }
     
+    [UIView animateWithDuration:0.2
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         // moves label down 100 units in the y axis
+                         self.firstLine.transform = CGAffineTransformMakeTranslation(0, 10);
+                         // fade label in
+                         self.firstLine.alpha = 1;
+                     }
+                     completion:^(BOOL finished) {
+                     }];
+    
+    [UIView animateWithDuration:0.2
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         // moves label down 100 units in the y axis
+                         self.secondLine.transform = CGAffineTransformMakeTranslation(0, 10);
+                         // fade label in
+                         self.secondLine.alpha = 1;
+                     }
+                     completion:^(BOOL finished) {
+                     }];
+    [UIView animateWithDuration:0.2
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseIn
+                     animations:^{
+                         // moves label down 100 units in the y axis
+                         self.thirdLine.transform = CGAffineTransformMakeTranslation(0, 10);
+                         // fade label in
+                         self.thirdLine.alpha = 1;
+                     }
+                     completion:^(BOOL finished) {
+                     }];
+
+    
     NSLog(@"%@", words);
     
-    
-    self.allKnowingLabel.text = saintName;
+    self.currentBar = [NSString stringWithFormat:@"%@ %@ %@", self.firstLine.text, self.secondLine.text, self.thirdLine.text];
+    //self.allKnowingLabel.text = saintName;
 }
 
 - (IBAction)getDirections:(id)sender {
-    /*
+    
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"comgooglemaps://?center=%f,%f",self.currentLocation.coordinate.latitude, self.currentLocation.coordinate.longitude]];
     if (![[UIApplication sharedApplication] canOpenURL:url]) {
         NSLog(@"Google Maps app is not installed");
+        
+        //use maps
+        MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:self.currentLocation.coordinate addressDictionary:nil];
+        MKMapItem *item = [[MKMapItem alloc] initWithPlacemark:placemark];
+        item.name = self.currentBar;
+        [item openInMapsWithLaunchOptions:nil];
+        
         //left as an exercise for the reader: open the Google Maps mobile website instead!
     } else {
         [[UIApplication sharedApplication] openURL:url];
-    }*/
+    }
+}
+- (IBAction)switched:(id)sender {
+    
 }
 
 -(BOOL)canBecomeFirstResponder {

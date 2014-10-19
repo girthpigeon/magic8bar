@@ -17,34 +17,39 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="I Drink" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m1Y-Ji-fSw">
-                                <rect key="frame" x="174" y="232" width="252" height="40"/>
+                                <rect key="frame" x="196" y="210" width="208" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="167" y="338" width="67" height="29"/>
+                                    <rect key="frame" x="167" y="313" width="67" height="29"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Where Should" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jo1-pW-iPx">
-                                <rect key="frame" x="124" y="184" width="341" height="40"/>
+                                <rect key="frame" x="166" y="162" width="268" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="126" y="290" width="148" height="29"/>
-                                </variation>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="KvB-eb-aDj">
+                                <rect key="frame" x="166" y="516" width="268" height="29"/>
+                                <segments>
+                                    <segment title="Bars"/>
+                                    <segment title="Drinks"/>
+                                </segments>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="switched:" destination="vXZ-lx-hvc" eventType="valueChanged" id="zqX-RE-a7l"/>
+                                </connections>
+                            </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tonight?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TFG-vB-kAP">
-                                <rect key="frame" x="209" y="280" width="170" height="40"/>
+                                <rect key="frame" x="217" y="258" width="170" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="155" y="405" width="90" height="29"/>
-                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MmT-uh-01b">
-                                <rect key="frame" x="255" y="346" width="79" height="26"/>
+                                <rect key="frame" x="261" y="343" width="79" height="26"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Shake">
                                     <color key="titleColor" red="0.20000000000000001" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -56,7 +61,7 @@
                                 <variation key="heightClass=regular" misplaced="YES">
                                     <rect key="frame" x="261" y="460" width="79" height="26"/>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="161" y="360" width="79" height="26"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
@@ -72,22 +77,41 @@
                                     <action selector="findBars:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="mcH-4O-WSY"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwf-1b-76E">
+                                <rect key="frame" x="200" y="155" width="200" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="PMk-Bl-cbf"/>
+                                    <constraint firstAttribute="width" constant="200" id="UI2-cg-RUk"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="getDirections:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Fbf-85-U5H"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="m1Y-Ji-fSw" secondAttribute="centerY" constant="48" id="0BO-gN-KF0"/>
-                            <constraint firstAttribute="centerX" secondItem="TFG-vB-kAP" secondAttribute="centerX" id="FNY-4G-04E"/>
-                            <constraint firstAttribute="centerX" secondItem="jo1-pW-iPx" secondAttribute="centerX" id="a70-3f-kjm"/>
-                            <constraint firstAttribute="centerY" secondItem="MmT-uh-01b" secondAttribute="centerY" constant="-59" id="f6x-Fm-RE5"/>
-                            <constraint firstAttribute="centerX" secondItem="MmT-uh-01b" secondAttribute="centerX" id="iGn-Yc-XJD"/>
-                            <constraint firstAttribute="centerY" secondItem="TFG-vB-kAP" secondAttribute="centerY" id="vZs-30-Iy0"/>
-                            <constraint firstAttribute="centerX" secondItem="m1Y-Ji-fSw" secondAttribute="centerX" id="xTR-pc-8cE"/>
-                            <constraint firstAttribute="centerY" secondItem="jo1-pW-iPx" secondAttribute="centerY" constant="96" id="zFn-2a-hKY"/>
+                            <constraint firstAttribute="centerY" secondItem="m1Y-Ji-fSw" secondAttribute="centerY" constant="70" id="5Rh-Ed-dTi"/>
+                            <constraint firstAttribute="centerY" secondItem="dwf-1b-76E" secondAttribute="centerY" constant="65" id="6in-xR-N3B"/>
+                            <constraint firstAttribute="centerX" secondItem="TFG-vB-kAP" secondAttribute="centerX" id="Hff-kj-ejJ"/>
+                            <constraint firstAttribute="centerY" secondItem="KvB-eb-aDj" secondAttribute="centerY" constant="-230" id="NgN-d5-ozE"/>
+                            <constraint firstAttribute="centerY" secondItem="TFG-vB-kAP" secondAttribute="centerY" constant="22" id="ZN8-ok-aSZ"/>
+                            <constraint firstAttribute="centerX" secondItem="jo1-pW-iPx" secondAttribute="centerX" id="c74-Nv-os5"/>
+                            <constraint firstAttribute="centerX" secondItem="dwf-1b-76E" secondAttribute="centerX" id="d1h-bW-6og"/>
+                            <constraint firstAttribute="centerX" secondItem="KvB-eb-aDj" secondAttribute="centerX" id="eYU-AR-Fkf"/>
+                            <constraint firstAttribute="centerY" secondItem="jo1-pW-iPx" secondAttribute="centerY" constant="118" id="flM-dm-F4d"/>
+                            <constraint firstAttribute="centerY" secondItem="jo1-pW-iPx" secondAttribute="centerY" constant="118" id="hon-WI-eRz"/>
+                            <constraint firstAttribute="centerY" secondItem="MmT-uh-01b" secondAttribute="centerY" constant="-56" id="tkG-Tp-VXz"/>
+                            <constraint firstAttribute="centerX" secondItem="m1Y-Ji-fSw" secondAttribute="centerX" id="ukK-d0-d3B"/>
+                            <constraint firstAttribute="centerX" secondItem="MmT-uh-01b" secondAttribute="centerX" id="whO-hh-hUl"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="firstLine" destination="jo1-pW-iPx" id="E48-jS-rW9"/>
                         <outlet property="secondLine" destination="m1Y-Ji-fSw" id="s9g-30-teV"/>
+                        <outlet property="segmentedControl" destination="KvB-eb-aDj" id="uni-40-jKj"/>
                         <outlet property="thirdLine" destination="TFG-vB-kAP" id="4sY-JY-6bU"/>
                     </connections>
                 </viewController>

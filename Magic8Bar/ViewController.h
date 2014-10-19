@@ -35,7 +35,9 @@
 @property (strong, nonatomic) IBOutlet UILabel *firstLine;
 @property (strong, nonatomic) IBOutlet UILabel *secondLine;
 @property (strong, nonatomic) IBOutlet UILabel *thirdLine;
+@property (strong, nonatomic) NSString *currentBar;
 
+@property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
 
 @property (strong, nonatomic) IBOutlet UIButton *getDirections;
 @property (strong, nonatomic) IBOutlet UILabel *allKnowingLabel;
