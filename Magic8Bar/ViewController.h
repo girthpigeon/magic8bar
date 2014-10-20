@@ -44,6 +44,7 @@
 @property (strong, nonatomic) NSMutableArray *bars;
 
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+@property (strong, nonatomic) IBOutlet UIImageView *triangle;
 @property (strong, nonatomic) IBOutlet UIButton *shakebutton;
 @property (strong, nonatomic) IBOutlet UIImageView *backgroundimage;
 

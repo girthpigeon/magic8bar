@@ -268,6 +268,7 @@
                         <outlet property="secondLine" destination="m1Y-Ji-fSw" id="s9g-30-teV"/>
                         <outlet property="segmentedControl" destination="KvB-eb-aDj" id="uni-40-jKj"/>
                         <outlet property="thirdLine" destination="TFG-vB-kAP" id="4sY-JY-6bU"/>
+                        <outlet property="triangle" destination="21H-oz-vjJ" id="IP8-Fj-F1a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

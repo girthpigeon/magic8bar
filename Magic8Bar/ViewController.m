@@ -63,11 +63,25 @@
     }
 }
 
+-(void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    if (motion == UIEventSubtypeMotionShake){
+        [self fadeOut:self.triangle withDuration:2.0 andWait:0.0 FadeLevel:0.0];
+        [self fadeOut:self.firstLine withDuration:2.0 andWait:0.0 FadeLevel:0.0];
+        [self fadeOut:self.secondLine withDuration:2.0 andWait:0.0 FadeLevel:0.0];
+        [self fadeOut:self.thirdLine withDuration:2.0 andWait:0.0 FadeLevel:0.0];
+    }
+}
+
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
 {
     if (motion == UIEventSubtypeMotionShake)
     {
-        [self findBars:self];
+        //[self findBars:self];
+        [self fadeIn:self.triangle withDuration:2.0 andWait:0.0 FadeLevel:1.0];
+        [self fadeIn:self.firstLine withDuration:2.0 andWait:0.0 FadeLevel:1.0];
+        [self fadeIn:self.secondLine withDuration:2.0 andWait:0.0 FadeLevel:1.0];
+        [self fadeIn:self.thirdLine withDuration:2.0 andWait:0.0 FadeLevel:1.0];
     }
 }
 
@@ -401,6 +415,26 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [self resignFirstResponder];
     [super viewWillDisappear:animated];
+}
+
+-(void)fadeOut:(UIView*)viewToDissolve withDuration:(NSTimeInterval)duration
+       andWait:(NSTimeInterval)wait FadeLevel:(float) fadeLevel
+{
+    [UIView beginAnimations: @"Fade Out" context:nil];
+    [UIView setAnimationDelay:wait];
+    [UIView setAnimationDuration:duration];
+    viewToDissolve.alpha = fadeLevel;
+    [UIView commitAnimations];
+}
+
+-(void)fadeIn:(UIView*)viewToFadeIn withDuration:(NSTimeInterval)duration
+      andWait:(NSTimeInterval)wait FadeLevel:(float) fadeLevel
+{
+    [UIView beginAnimations: @"Fade In" context:nil];
+    [UIView setAnimationDelay:wait];
+    [UIView setAnimationDuration:duration];
+    viewToFadeIn.alpha = fadeLevel;
+    [UIView commitAnimations];
 }
 
 - (void)didReceiveMemoryWarning {
