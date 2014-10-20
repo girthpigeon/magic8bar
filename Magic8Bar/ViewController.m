@@ -18,26 +18,49 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //UIGraphicsBeginImageContext(newSize);
-    // In next line, pass 0.0 to use the current device's pixel scaling factor (and thus account for Retina resolution).
-    // Pass 1.0 to force exact pixel size.
-    
-    UIImage *Background = [UIImage imageNamed:@"magic8bar.png"];
-    self.lookingForBars = true;
-    
-    //UIGraphicsBeginImageContext(newSize);
-    // In next line, pass 0.0 to use the current device's pixel scaling factor (and thus account for Retina resolution).
-    // Pass 1.0 to force exact pixel size.
-    CGRect screen = [[UIScreen mainScreen] bounds];
-    UIGraphicsBeginImageContextWithOptions(screen.size, NO, 0.0);
-    [Background drawInRect:CGRectMake(0, 0, screen.size.width, screen.size.height)];
-    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage:newImage]];
+    [self fuckWithLayout];
     
     self.currentDist = 9000.0;
     //[self getCurrentLocation];
+    
+    
+    self.lookingForBars = true;
+}
+
+-(void)fuckWithLayout
+{
+    CGSize iOSDeviceScreenSize = [[UIScreen mainScreen] bounds].size;
+    UIImage *image = [UIImage imageNamed:@"background"];
+    
+    CGRect frame = CGRectMake(0, 0, iOSDeviceScreenSize.width, iOSDeviceScreenSize.height);
+    UIGraphicsBeginImageContext(frame.size);
+    [image drawInRect:frame];
+    UIImage *newPic = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    NSData *imageData = UIImagePNGRepresentation(newPic);
+    UIImage *resizedImage = [UIImage imageWithData:imageData];
+    
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:resizedImage]];
+
+    
+    //iphone 4
+    if (iOSDeviceScreenSize.height == 480)
+    {
+        self.segmentedControl.transform = CGAffineTransformMakeTranslation(0, 100);
+        self.shakebutton.transform = CGAffineTransformMakeTranslation(0, -40);
+    }
+    
+    //iphone 5
+    else if (iOSDeviceScreenSize.height == 568){
+        
+    }
+    
+    //iphone 6 and above
+    else if (iOSDeviceScreenSize.height > 568){
+        self.segmentedControl.transform = CGAffineTransformMakeTranslation(0, -50);
+        //self.backgroundimage.transform = CGAffineTransformMakeTranslation(0, 200);
+        //self.shakebutton.transform = CGAffineTransformMakeTranslation(0, 200);
+    }
 }
 
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
@@ -213,7 +236,11 @@
     //The results from Google will be an array obtained from the NSDictionary object with the key "results".
     NSDictionary* christianValues = [heHasBeenSaved objectForKey:@"result"];
     NSString *saintName = [christianValues objectForKey:@"name"];
-    
+    NSDictionary* geom = [christianValues objectForKey:@"geometry"];
+    NSDictionary *point =  [geom objectForKey:@"location"];
+    self.currentBarsLatitude = [point objectForKey:@"lat"];
+    self.currentBarsLongitude = [point objectForKey:@"lng"];
+
     self.currentBar = saintName;
     [self parseResults:saintName];
 }
@@ -324,19 +351,28 @@
 
 - (IBAction)getDirections:(id)sender {
     
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"comgooglemaps://?center=%f,%f",self.currentLocation.coordinate.latitude, self.currentLocation.coordinate.longitude]];
-    if (![[UIApplication sharedApplication] canOpenURL:url]) {
+    if(self.lookingForBars){
+    
+        if(![self.firstLine.text isEqualToString:@"Where should"]){
+    //NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"comgooglemaps://?center=%f,%f",[self.currentBarsLatitude floatValue], [self.currentBarsLongitude floatValue]]];
+    //if (![[UIApplication sharedApplication] canOpenURL:url]) {
         NSLog(@"Google Maps app is not installed");
         
         //use maps
-        MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:self.currentLocation.coordinate addressDictionary:nil];
+        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([self.currentBarsLatitude floatValue], [self.currentBarsLongitude floatValue]);
+        MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:coordinate addressDictionary:nil];
         MKMapItem *item = [[MKMapItem alloc] initWithPlacemark:placemark];
         item.name = self.currentBar;
         [item openInMapsWithLaunchOptions:nil];
         
         //left as an exercise for the reader: open the Google Maps mobile website instead!
+    //} else {
+      //  [[UIApplication sharedApplication] openURL:url];
+    //}
+        }
+        
     } else {
-        [[UIApplication sharedApplication] openURL:url];
+        //google the drink
     }
 }
 - (IBAction)switched:(id)sender {

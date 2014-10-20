@@ -36,12 +36,16 @@
 @property (strong, nonatomic) IBOutlet UILabel *secondLine;
 @property (strong, nonatomic) IBOutlet UILabel *thirdLine;
 @property (strong, nonatomic) NSString *currentBar;
+@property (strong, nonatomic) NSString *currentBarsLongitude;
+@property (strong, nonatomic) NSString *currentBarsLatitude;
 @property bool lookingForBars;
 
 @property (strong, nonatomic) NSMutableArray *drinks;
 @property (strong, nonatomic) NSMutableArray *bars;
 
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+@property (strong, nonatomic) IBOutlet UIButton *shakebutton;
+@property (strong, nonatomic) IBOutlet UIImageView *backgroundimage;
 
 @property (strong, nonatomic) IBOutlet UIButton *getDirections;
 @property (strong, nonatomic) IBOutlet UILabel *allKnowingLabel;
